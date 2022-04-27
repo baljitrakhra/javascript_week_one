@@ -18,16 +18,16 @@ const searchCandies = (prefix, price) => {
   
   let prefix1 = 0;
   let prefix2 = 0;
-  prefix1 = prefix.split("")[0]
-  prefix2 = prefix.split("")[1]
+  prefix1 = prefix.split("")[0];
+  prefix2 = prefix.split("")[1];
   if (prefix2 === undefined){
     return candies
-    .filter(candy => candy.price < price && (candy.name.split("")[0] === prefix1))
+    .filter(candy => candy.price < price && (candy.name.split("")[0] === (prefix1.toUpperCase())))
     .map(candy => `${candy.name}`);
     console.log(candies);
   } else {
     return candies
-    .filter(candy => candy.price < price && (candy.name.split("")[0] === prefix1 && candy.name.split("")[1] === prefix2))
+    .filter(candy => candy.price < price && (candy.name.split("")[0] === prefix1.toUpperCase() && candy.name.split("")[1] === prefix2))
     .map(candy => `${candy.name}`);
   }
 }

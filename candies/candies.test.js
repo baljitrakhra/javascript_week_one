@@ -13,4 +13,7 @@ describe('search for candies',() => {
   it('return 2 products when S is selected and price is under 4', () => {
     expect(searchCandies('S',4)).toEqual([ 'Skitties', 'Skittles' ])
   });
+  it('return 2 products when ma is selected and price is under 10', () => {
+    expect(searchCandies('ma',10)).toEqual([ 'Mars', 'Maltesers' ])
+  });
 });
