@@ -6,7 +6,7 @@ class GithubApi{
     .then((response) =>{
       callback(JSON.parse(response.body));
     });
-  } 
+  }
 }
 
 module.exports = GithubApi;
