@@ -15,7 +15,7 @@ describe('Thermostat', () => {
     expect(therm.Temp).toBe(21);
   });
   it('shows the current temprature', () => {
-    therm.getTemprature();
+    therm.getTemperature();
     expect(therm.Temp).toBe(21);
   });
   it('returns a message that temp cannot go below 10 degree', () => {

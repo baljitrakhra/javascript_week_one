@@ -20,7 +20,7 @@ class Thermostat{
     return this.Temp -= 1;  
   }
   }
-  getTemprature(){
+  getTemperature(){
     return this.Temp;
   }
   setPowerSavingMode(condition) {
