@@ -4,9 +4,11 @@ class Thermostat{
     this.powerSMode = true;
   }
   up() {
-    if ( this.Temp >= 25 ){
+    if ( this.Temp >= 25 && this.powerSMode === true){
       return 'Maximum temprature of 25 reached';
-    } else {
+    } else if ( this.Temp >= 32 && this.powerSMode === false) {
+      return 'Maximum temprature of 32 reached';
+    } else { 
       return this.Temp += 1;
   }
       

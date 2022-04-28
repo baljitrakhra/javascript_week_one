@@ -45,4 +45,12 @@ describe('Thermostat', () => {
     }
     expect(therm3.up()).toEqual('Maximum temprature of 25 reached');
   });
+  it('in power saving mode off the max temperature set to 32', () => {
+    const therm4 = new Thermostat();
+    therm4.setPowerSavingMode(false);
+    for (let i = 0 ; i < 12 ; i++) {
+      therm4.up();
+    }
+    expect(therm4.up()).toEqual('Maximum temprature of 32 reached');
+  });
 });
