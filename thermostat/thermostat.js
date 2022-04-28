@@ -1,9 +1,15 @@
 class Thermostat{
   constructor(){
     this.Temp = 20;
+    this.powerSMode = true;
   }
   up() {
-    return this.Temp += 1;  
+    if ( this.Temp >= 25 ){
+      return 'Maximum temprature of 25 reached';
+    } else {
+      return this.Temp += 1;
+  }
+      
   }
   down() {
     if ( this.Temp <= 10 ){
@@ -14,6 +20,13 @@ class Thermostat{
   }
   getTemprature(){
     return this.Temp;
+  }
+  setPowerSavingMode(condition) {
+    if (condition === false){
+      this.powerSMode = false;
+    }else {
+      this.powerSMode = true
+    }
   }
 }
 module.exports = Thermostat;
