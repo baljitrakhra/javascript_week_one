@@ -30,5 +30,17 @@ class Thermostat{
       this.powerSMode = true
     }
   }
+  reset(){
+    this.Temp = 20
+  }
+  currentUsage(){
+    if (this.Temp < 18){
+      return 'Low usage';
+    } else if (this.Temp <= 25) {
+      return 'Medium usage';
+    } else {
+      return 'High usage';
+    }
+  }
 }
 module.exports = Thermostat;

@@ -53,4 +53,31 @@ describe('Thermostat', () => {
     }
     expect(therm4.up()).toEqual('Maximum temprature of 32 reached');
   });
+  it('resets the temp t0 20', () => {
+    therm.reset();
+    expect(therm.Temp).toBe(20);
+  });
+  it('shows low usuage', () => {
+    therm.reset();
+    therm.down();
+    therm.down();
+    therm.down();
+    expect(therm.currentUsage()).toEqual('Low usage');
+  });
+  it('shows medium usuage', () => {
+    therm.reset();
+    expect(therm.currentUsage()).toEqual('Medium usage');
+  });
+  it('shows High usuage', () => {
+    therm.reset();
+    therm.setPowerSavingMode(false);
+    therm.up();
+    therm.up();
+    therm.up();
+    therm.up();
+    therm.up();
+    therm.up();
+    console.log(therm.Temp);
+    expect(therm.currentUsage()).toEqual('High usage');
+  });
 });
